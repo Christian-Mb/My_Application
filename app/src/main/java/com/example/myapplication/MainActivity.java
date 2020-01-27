@@ -167,6 +167,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             popUp("valeur saisie = " + getTxtValeur());
+            Intent intent = new Intent(v.getContext(),Main3Activity.class);
+            startActivity(intent);
         }
     };
   View.OnClickListener btnSetAct2 = new View.OnClickListener() {
