@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">TP2_Mobile</string>
+    <string name="meter">Mètre</string>
+    <string name="centimeter">Centimètre</string>
+    <string name="appreciation">Appreciation</string>
+    <string name="calculer_Button">CALCULER L\'IMC</string>
+    <string name="reset">RENITIALISER</string>
+    <string name="result">"Résultat : "</string>
+    <string name="textWeight">"Déterminer votre poids : "</string>
+    <string name="textHeight">Déterminer votre taille :</string>
+    <string name="Your_imc">"Votre IMC est "</string>
+    <string name="weight">Poids</string>
+    <string name="size">Taille</string>
+    <string name="get_result">Cliquer le button \"CALCULER IMC\" Pour obtenir un résultat</string>
+    <string name="lean">Maigreur</string>
+    <string name="normal_build">Corpulence normale</string>
+    <string name="overWeight">Surpoids</string>
+    <string name="moderate_obesity">Obésité modérée</string>
+    <string name="servere_obesity">Obésité sévère</string>
+    <string name="morbid_obesity">Obésité morbide ou massive</string>
+    <string name="msgSize">La taille doit être positive</string>
+    <string name="msgWeight">Le poids doit etre positif</string>
+    <string name="starvation">Famine</string>
 </resources>
