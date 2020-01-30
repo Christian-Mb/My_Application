@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="textWeight">"Select your weight : "</string>
+    <string name="textHeight">Select your height :</string>
+    <string name="meter">Meter</string>
+    <string name="centimeter">centimeter</string>
+    <string name="apppreciation">Appreciation</string>
+    <string name="Calculate_BMI">CALCULATE BMI</string>
+    <string name="reset">RESET</string>
+    <string name="result">Result :</string>
+    <string name="your_imc">Your BMI is</string>
+    <string name="lean">lean</string>
+    <string name="starvation">Starvation</string>
+    <string name="normal_build">Normal build</string>
+    <string name="overweight">Overweight</string>
+    <string name="moderate_obesity">Moderate Corpulence</string>
+    <string name="Massive_obesity">Massive obesity</string>
+    <string name="severe_obesity">severe obesity</string>
+    <string name="weight">Weight :</string>
+    <string name="height">"Height : "</string>
+    <string name="instruction_Text">" Click on the "BMI calculator" button to obtain a result."</string>
+    <string name="MsgErrorHeight">Height must be positive</string>
+    <string name="MsgErrorWeight">Weigh must be positives</string>
+</resources>

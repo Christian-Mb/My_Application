@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton centimeter = null;
     RadioButton meter = null;
     TextView result;
-    private final String texteInit = "Cliquez sur le bouton « Calculer l'IMC » pour obtenir un résultat.";
+    private  String texteInit = "Cliquez sur le bouton « Calculer l'IMC » pour obtenir un résultat.";
 
     public MainActivity() {
         result = null;
@@ -78,11 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
             // Puis on vérifie que la taille est cohérente
             if (tValue < 0)
-                Toast.makeText(MainActivity.this, getString(R.string.msgSize), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.MsgErrorHeight), Toast.LENGTH_SHORT).show();
             else {
                 float pValue = Float.valueOf(p);
                 if (pValue < 0)
-                    Toast.makeText(MainActivity.this, getString(R.string.msgWeight),
+                    Toast.makeText(MainActivity.this, getString(R.string.MsgErrorWeight),
                             Toast.LENGTH_SHORT).show();
                 else {
                     // Si l'utilisateur a indiqué que la taille était en centimètres
@@ -109,16 +109,16 @@ public class MainActivity extends AppCompatActivity {
             return getString(R.string.normal_build);
         }
         if (imc > 25 && imc <= 30) {
-            return getString(R.string.overWeight);
+            return getString(R.string.overweight);
         }
         if (imc > 30 && imc <= 35) {
             return getString(R.string.moderate_obesity);
         }
         if (imc > 35 && imc <= 40) {
-            return getString(R.string.servere_obesity);
+            return getString(R.string.severe_obesity);
         }
         if (imc > 40) {
-            return getString(R.string.morbid_obesity);
+            return getString(R.string.Massive_obesity);
         }
         return null;
     }

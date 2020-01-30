@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -9,35 +10,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Déterminez votre poids : "
+        android:text="@string/textWeight"
         android:textColor="#FF0000"
-        android:textStyle="bold"
-        tools:text="@string/textWeight" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/poids"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Poids :"
-        android:inputType="numberDecimal"
-        tools:text="@string/weight" />
+        android:hint="@string/weight"
+        android:inputType="numberDecimal" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Déterminez votre taille : "
+        android:text="@string/textHeight"
         android:textColor="#FF0000"
-        android:textStyle="bold"
-        tools:text="@string/textHeight" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/taille"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Taille :"
-        android:inputType="numberDecimal"
-        tools:text="@string/size" />
+        android:hint="@string/height"
+        android:inputType="numberDecimal" />
     <RadioGroup
         android:id="@+id/group"
         android:layout_width="wrap_content"
@@ -50,23 +47,20 @@
             android:id="@+id/radio_metre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mètre"
-            tools:text="@string/meter" />
+            android:text="@string/meter" />
 
         <RadioButton
             android:id="@+id/radio_centimetre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Centimètre"
-            tools:text="@string/centimeter" />
+            android:text="@string/centimeter" />
     </RadioGroup>
 
     <CheckBox
         android:id="@+id/commentaire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Appréciation"
-        tools:text="@string/appreciation" />
+        android:text="@string/apppreciation" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -78,27 +72,24 @@
             android:id="@+id/calcul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculer l'IMC"
-            tools:text="@string/calculer_Button" />
+            android:text="@string/Calculate_BMI" />
 
         <Button
             android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Reset"
-            tools:text="@string/reset" />
+            android:text="@string/reset" />
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Résultat:"
-        tools:text="@string/result" />
+        android:text="@string/result" />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:text="Vous devez cliquer sur le bouton « Calculer l'IMC » pour obtenir un résultat."
-        tools:text="@string/get_result" />
+        
+        android:text="@string/instruction_Text" />
 </LinearLayout>
