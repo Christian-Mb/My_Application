@@ -28,12 +28,15 @@ public class MainActivity extends AppCompatActivity {
     Button buttonC = null;
     Button buttonEgal = null;
     Button buttonPoint = null;
+    Button buttonM = null;
+    Button buttonMr = null;
     EditText ecran = null;
 
     private double chiffre1;
     private boolean clicOperateur = false;
     private boolean update = false;
     private String operateur = "";
+    private String save = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +60,23 @@ public class MainActivity extends AppCompatActivity {
         buttonMul = (Button) findViewById(R.id.buttonMultiplier);
         buttonC = (Button) findViewById(R.id.buttonC);
         buttonEgal = (Button) findViewById(R.id.buttonEgal);
+        buttonM = (Button) findViewById(R.id.buttonM);
+        buttonMr = (Button) findViewById(R.id.buttonMr);
 
         ecran = (EditText) findViewById(R.id.EditText01);
+
+        buttonM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                save();
+            }
+        });
+        buttonMr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getR();
+            }
+        });
 
         buttonPlus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -162,6 +180,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void getR() {
+        if (this.save != null) ecran.setText(this.save);
+    }
+
+    private void save() {
+
+        if (ecran.getText().toString()!=null) this.save = ecran.getText().toString();
     }
 
     //voici la méthode qui est exécutée lorsqu'on clique sur un bouton chiffre
