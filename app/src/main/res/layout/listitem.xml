@@ -8,23 +8,24 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="24dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textStyle="bold"
+        android:text="Planète"
         android:textColor="@color/colorAccent"
-        android:text="Planète" />
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/checkbox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.6"
-        android:text="Certain" />
+        android:text="Certain"
+        android:gravity= "center"/>
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_weight="0.4">
 

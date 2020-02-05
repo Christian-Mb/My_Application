@@ -10,6 +10,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.time.Clock;
 import java.util.ArrayList;
 
 class PlaneteAdapter extends BaseAdapter {
@@ -17,6 +19,9 @@ class PlaneteAdapter extends BaseAdapter {
     private ArrayList<String> planetes;
     private LayoutInflater layoutInflater;
     private Context context;
+    private Data data;
+
+    private int n;
 
 
 
@@ -24,20 +29,10 @@ class PlaneteAdapter extends BaseAdapter {
     public PlaneteAdapter(LayoutInflater layoutInflater, Context context) {
         this.layoutInflater = layoutInflater;
         this.context= context;
-            installePlanetes();
+           data = new Data();
+           planetes = data.getPlanete();
     }
-    private void installePlanetes() {
-        planetes = new ArrayList<String>();
-        planetes.add("Mercure");
-        planetes.add("Venus");
-        planetes.add("Terre");
-        planetes.add("Mars");
-        planetes.add("Jupiter");
-        planetes.add("Saturne");
-        planetes.add("Uranus");
-        planetes.add("Neptune");
-        planetes.add("Pluton");
-    }
+
 
     /**
      * How many items are in the data set represented by this Adapter.
@@ -106,8 +101,8 @@ class PlaneteAdapter extends BaseAdapter {
 
         nomPlanete.setText(planetes.get(position));
 
-        String[] taillePlanetes = {"4900", "12000", "12800", "6800", "144000", "120000", "52000", "50000", "2300"};
-        final ArrayAdapter<String> spinadapter = new ArrayAdapter<String>(this.context, android.R.layout.simple_spinner_item, taillePlanetes);
+
+        final ArrayAdapter<String> spinadapter = new ArrayAdapter<String>(this.context, android.R.layout.simple_spinner_item, data.getTaillePlanetes());
         spinadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinadapter);
 
@@ -115,11 +110,38 @@ class PlaneteAdapter extends BaseAdapter {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 CheckBox checkBox = (CheckBox) compoundButton.findViewById(R.id.checkbox);
+
                 spinner.setEnabled(!checkBox.isChecked());
                 spinadapter.notifyDataSetChanged();
+                if (checkBox.isChecked()) {
+                    n++;
+
+;                }
+                else if(!checkBox.isChecked()){
+                    n--;
+                    System.out.println("-1 "+n);
+                }
+
+
             }
         });
 
         return itemView;
+    }
+
+
+
+    public boolean isVerif() {
+
+        if (n==planetes.size()-1) return true;
+        else return false;
+    }
+
+    public ArrayList<String> getPlanetes() {
+        return planetes;
+    }
+
+    public Data getData() {
+        return data;
     }
 }
