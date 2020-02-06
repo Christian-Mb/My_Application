@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listview;
     PlaneteAdapter adapter;
     private Button button = null;
+    private Button buttonC = null;
     private int score = 0;
 
 
@@ -38,9 +39,21 @@ public class MainActivity extends AppCompatActivity {
         adapter = new PlaneteAdapter(MainActivity.this.getLayoutInflater(),MainActivity.this.getApplicationContext());
         listview.setAdapter(adapter);
         button= (Button) findViewById(R.id.button);
+        buttonC= (Button) findViewById(R.id.button2);
 
         button.setOnClickListener(check);
+        buttonC.setOnClickListener(crocher);
     }
+
+    private View.OnClickListener crocher = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+
+
+        }
+
+    };
 
     private View.OnClickListener check = new View.OnClickListener() {
 
@@ -56,14 +69,14 @@ public class MainActivity extends AppCompatActivity {
 
                 System.out.println("oui");
 
-                for (int i= 1; i< adapter.getPlanetes().size(); i++){
+                for (int i= 0; i< adapter.getPlanetes().size(); i++){
 
                      view = (ViewGroup) listview.getChildAt(i);
                      s= (Spinner) view.findViewById(R.id.spinner);
                      text = s.getSelectedItem().toString();
 
                      System.out.println(text);
-                     if (text.equals(adapter.getData().getTaillePlanetes()[i-1])) score++;
+                     if (text.equals(adapter.getData().getTaillePlanetes()[i])) score++;
 
                 }
 

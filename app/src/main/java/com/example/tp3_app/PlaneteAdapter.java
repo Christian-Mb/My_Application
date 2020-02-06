@@ -21,7 +21,7 @@ class PlaneteAdapter extends BaseAdapter {
     private Context context;
     private Data data;
 
-    private int n;
+    private int n=0;
 
 
 
@@ -115,13 +115,11 @@ class PlaneteAdapter extends BaseAdapter {
                 spinadapter.notifyDataSetChanged();
                 if (checkBox.isChecked()) {
                     n++;
-
-;                }
+                }
                 else if(!checkBox.isChecked()){
                     n--;
-                    System.out.println("-1 "+n);
                 }
-
+            System.out.println(n);
 
             }
         });
@@ -133,7 +131,7 @@ class PlaneteAdapter extends BaseAdapter {
 
     public boolean isVerif() {
 
-        if (n==planetes.size()-1) return true;
+        if (n==planetes.size()) return true;
         else return false;
     }
 
