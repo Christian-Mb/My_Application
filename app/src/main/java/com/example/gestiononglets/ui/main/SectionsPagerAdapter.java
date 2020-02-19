@@ -1,6 +1,10 @@
 package com.example.gestiononglets.ui.main;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -47,15 +51,31 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         Locale l = Locale.getDefault();
+        String titre ="";
+        Drawable icone = null;
+
         switch (position) {
             case 0:
-                return mContext.getString(R.string.tab_text_1).toUpperCase(l);
+                titre= mContext.getString(R.string.tab_text_1).toUpperCase(l);
+                icone = mContext.getResources().getDrawable(R.drawable.coffee);
+                break;
             case 1:
-                return mContext.getString(R.string.tab_text_2).toUpperCase(l);
+                titre= mContext.getString(R.string.tab_text_2).toUpperCase(l);
+                icone = mContext.getResources().getDrawable(R.drawable.commerce1);
+                break;
+
             case 2:
-                return mContext.getString(R.string.tab_text_3).toUpperCase(l);
+                titre= mContext.getString(R.string.tab_text_3).toUpperCase(l);
+                icone = mContext.getResources().getDrawable(R.drawable.developer);
+                break;
+
         }
-        return null;
+        SpannableString sb = new SpannableString(" " + titre);
+        icone.setBounds(0, 0, icone.getIntrinsicWidth(),icone.getIntrinsicHeight());
+        ImageSpan span = new ImageSpan(icone, ImageSpan.ALIGN_BASELINE);
+        sb.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        return sb;
 
     }
 
