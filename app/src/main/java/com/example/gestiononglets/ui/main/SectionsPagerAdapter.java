@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -54,19 +55,26 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         String titre ="";
         Drawable icone = null;
 
+
+
         switch (position) {
             case 0:
                 titre= mContext.getString(R.string.tab_text_1).toUpperCase(l);
                 icone = mContext.getResources().getDrawable(R.drawable.coffee);
+
+
+
                 break;
             case 1:
                 titre= mContext.getString(R.string.tab_text_2).toUpperCase(l);
                 icone = mContext.getResources().getDrawable(R.drawable.commerce1);
+
                 break;
 
             case 2:
                 titre= mContext.getString(R.string.tab_text_3).toUpperCase(l);
                 icone = mContext.getResources().getDrawable(R.drawable.developer);
+
                 break;
 
         }
@@ -75,8 +83,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         ImageSpan span = new ImageSpan(icone, ImageSpan.ALIGN_BASELINE);
         sb.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
+
+
+
         return sb;
 
+    }
+
+   public static  Drawable getImage(int position, Context mContext){
+       if (position ==1)  return  mContext.getResources().getDrawable(R.drawable.ete);
+       else if(position ==2) return  mContext.getResources().getDrawable(R.drawable.primtemps);
+       else return  mContext.getResources().getDrawable(R.drawable.hiver);
     }
 
     @Override
