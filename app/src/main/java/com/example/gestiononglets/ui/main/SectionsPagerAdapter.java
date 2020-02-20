@@ -43,6 +43,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return NatureFragment.newInstance(1, mContext.getString(R.string.tab_text_2));
             case 2:
                 return NatureFragment.newInstance(2, mContext.getString(R.string.tab_text_3));
+            case 3:
+                return NatureFragment.newInstance(3, mContext.getString(R.string.saisons));
         }
         return null;
 
@@ -76,6 +78,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 icone = mContext.getResources().getDrawable(R.drawable.developer);
 
                 break;
+            case 3:
+                titre = mContext.getString(R.string.saisons).toUpperCase();
+                icone= mContext.getResources().getDrawable(R.drawable.developer);
+                break;
 
         }
         SpannableString sb = new SpannableString(" " + titre);
@@ -93,12 +99,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
    public static  Drawable getImage(int position, Context mContext){
        if (position ==1)  return  mContext.getResources().getDrawable(R.drawable.ete);
        else if(position ==2) return  mContext.getResources().getDrawable(R.drawable.primtemps);
-       else return  mContext.getResources().getDrawable(R.drawable.hiver);
+       else   return  mContext.getResources().getDrawable(R.drawable.hiver);
+
+
     }
 
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 3;
+        return 4;
     }
 }

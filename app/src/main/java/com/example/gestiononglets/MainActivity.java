@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import com.example.gestiononglets.ui.main.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    ViewPager viewPager;
+   public ViewPager viewPager;
 
 
     @Override
@@ -78,4 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
