@@ -1,11 +1,13 @@
 package com.example.testrecycleview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -33,9 +35,9 @@ public class MainActivity extends AppCompatActivity  implements DetecteurDeClicS
         mAdapter = new MonRecyclerViewAdapter(getDataSource());
         mRecyclerView.setAdapter(mAdapter);
 
-        RecyclerView.ItemDecoration itemDecoration =
-                new DividerItemDecoration(this, R.drawable.divider);
-        mRecyclerView.addItemDecoration(itemDecoration);
+        //RecyclerView.ItemDecoration itemDecoration =
+              //  new DividerItemDecoration(this, R.drawable.divider);
+        //mRecyclerView.addItemDecoration(itemDecoration);
 
     }
 
@@ -54,6 +56,10 @@ public class MainActivity extends AppCompatActivity  implements DetecteurDeClicS
         super.onResume();
         mAdapter.setDetecteurDeClicSurRecycler((DetecteurDeClicSurRecycler) this);
     }
+
+
+
+
 
 
     @Override
