@@ -76,12 +76,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        stopService(intent);
+        if(isServiceRunning("com.example.heureservice.HeureService"))stopService(intent);
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        startService(intent);
+       if(n==1)  startService(intent);
     }
 }
