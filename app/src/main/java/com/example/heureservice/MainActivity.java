@@ -10,6 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private int n =0;
+    private  Intent intent = null ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this, HeureService.class);
 
+                intent = new Intent(MainActivity.this, HeureService.class);
                 if (n ==0){
                     serviceBtn.setText("Arrêter le service");
                     startService(intent);
@@ -72,5 +73,9 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopService(intent);
+    }
 }

@@ -46,6 +46,7 @@ public class HeureService extends Service {
         exitService();
     }
 
+
     private void exitService() {
         Toast.makeText(getApplicationContext(), "Service arrêté ...", Toast.LENGTH_SHORT).show();
         timer.cancel();
