@@ -78,4 +78,10 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         stopService(intent);
     }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        startService(intent);
+    }
 }
