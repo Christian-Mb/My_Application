@@ -1,5 +1,6 @@
 package com.example.heureservice;
 
+import android.app.ActivityManager;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
@@ -50,6 +51,9 @@ public class HeureService extends Service {
         timer.cancel();
         timer.purge();
     }
+
+
+
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {

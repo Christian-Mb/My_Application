@@ -2,6 +2,7 @@ package com.example.heureservice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Button serviceBtn = (Button) findViewById(R.id.serviceBtn);
+        final Button serviceBtn2 = (Button) findViewById(R.id.serviceBtn2);
+
+        serviceBtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(isServiceRunning("com.example.heureservice.HeureService")){
+                    serviceBtn2.setText("Arrêter le service");
+
+                }
+                else{
+                    serviceBtn2.setText("Quelle heure");
+                }
+
+
+            }
+        });
+
+
 
 
         serviceBtn.setOnClickListener( new View.OnClickListener()
@@ -41,5 +61,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private boolean isServiceRunning(String nomService) {
+        ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (nomService.equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
