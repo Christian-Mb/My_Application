@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HeureService</string>
+    <string name="btn1">Quelle heure ?</string>
 </resources>
