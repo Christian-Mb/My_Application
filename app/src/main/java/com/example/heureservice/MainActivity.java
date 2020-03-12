@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(isServiceRunning("com.example.heureservice.HeureService")){
-                    serviceBtn2.setText("Arrêter le service");
+                    serviceBtn2.setText("Service En cours");
 
                 }
                 else{
-                    serviceBtn2.setText("Quelle heure");
+                    serviceBtn2.setText("Demarrer le service");
                 }
 
 
